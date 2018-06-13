@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^users$ index.php [L]
+RewriteRule ^users/(.*)$ /index.php/users/$1 [L]
+RewriteRule ^users/create/$ /index.php/users/createUsers/ [L]
+RewriteRule ^users/update/(.*)$ /index.php/users/update/$1 [L]
+RewriteRule ^users/delete/(.*)$ /index.php/user/delete/$1 [L]

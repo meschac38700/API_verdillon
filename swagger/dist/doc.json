@@ -1,0 +1,305 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "La documentation de Users",
+    "version": "1.0.0",
+    "title": "Swagger Users",
+    "contact": {
+      "email": "e.lotonga.sen@gmail.com"
+    }
+  },
+  "host": "project1-verdillon-eliam38700.c9users.io",
+  "basePath": "/index.php",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "display user info",
+        "description": "",
+        "operationId": "getUser",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "number",
+            "description": "identifiant utilisateur",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "display all users",
+        "description": "",
+        "operationId": "getUsers",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/users/update/{id}": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update user infos",
+        "description": "",
+        "operationId": "updateUser",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "number",
+            "description": "identifiant utilisateur",
+            "required": true
+          },
+          {
+            "in": "formData",
+            "name": "roles",
+            "type": "string",
+            "description": "Status"
+          },
+          {
+            "in": "formData",
+            "name": "login",
+            "type": "string",
+            "description": "Login"
+          },
+          {
+            "in": "formData",
+            "name": "lastname",
+            "type": "string",
+            "description": "Nom"
+          },
+          {
+            "in": "formData",
+            "name": "firstname",
+            "type": "string",
+            "description": "Prenom"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "description": "Email"
+          },
+          {
+            "in": "formData",
+            "name": "password",
+            "type": "string",
+            "description": "Mot de passe"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/users/createUser/": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create user infos",
+        "description": "",
+        "operationId": "createUser",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "roles",
+            "type": "string",
+            "description": "Status"
+          },
+          {
+            "in": "formData",
+            "name": "login",
+            "type": "string",
+            "description": "Login"
+          },
+          {
+            "in": "formData",
+            "name": "lastname",
+            "type": "string",
+            "description": "Nom"
+          },
+          {
+            "in": "formData",
+            "name": "firstname",
+            "type": "string",
+            "description": "Prenom"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string",
+            "description": "Email"
+          },
+          {
+            "in": "formData",
+            "name": "password",
+            "type": "string",
+            "description": "Mot de passe"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/users/delete/{id}": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete user",
+        "description": "",
+        "operationId": "deleteUser",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "number",
+            "description": "identifiant utilisateur",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "login": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    }
+  }
+}
